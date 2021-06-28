@@ -20,7 +20,7 @@ app.get("/newsapi", (req, res) => {
     res.send(newsData);
 });
 
-const getNewsJob = schedule.scheduleJob('31 * * * *', function () {
+const getNewsJob = schedule.scheduleJob('34 * * * *', function () {
     console.log('Trae las noticias en el minuto N de la hora')
     axios.get(`${newsApiRoute}${newsApiKey}`)
       .then((response) => newsData=response.data)
