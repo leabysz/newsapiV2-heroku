@@ -16,7 +16,7 @@ app.get("/", (req,res) =>{
 });
 
 //hace el trabajo, recibe la llamada del navegador o tercero a mi servidor y devuelve newData
-router.get("/newsapi", (req, res) => {
+app.get("/newsapi", (req, res) => {
     res.send(newsData);
 });
 
