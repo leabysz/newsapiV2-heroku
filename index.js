@@ -14,7 +14,7 @@ const newsApiSortBy = 'publishedAt';
 const newsApiSize = '10';
 const newsApiKey = '6633de5b30b74366b611995131df0058';
 
-//array que guarda la apicall
+//Array que guarda el resultado de la apicall
 let newsData = [];
 let port = process.env.PORT || 3000;
 
@@ -43,4 +43,12 @@ const getNewsJob = schedule.scheduleJob('*/15 * * * *', function () {
 
 app.listen(port, () =>{
     console.log(`app funcionado en el puerto http://localhost:${port}`);
+});
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", '*');
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+    next();
 });
