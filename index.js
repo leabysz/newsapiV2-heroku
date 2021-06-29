@@ -4,6 +4,15 @@ const schedule = require('node-schedule');
 
 const app = express();
 
+app.all('*', function(req, res, next) {
+    var origin = req.get('origin'); 
+    res.header('Access-Control-Allow-Origin', origin);
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
+
 //documentacion https://newsapi.org/docs/endpoints/everything
 const newsApiRoute = 'https://newsapi.org/v2/everything?';
 //para agregar poner OR y usar + en lugar de espacios
@@ -46,10 +55,3 @@ app.listen(port, () =>{
     console.log(`app funcionado en el puerto http://localhost:${port}`);
 });
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", '*');
-    res.header("Access-Control-Allow-Credentials", true);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-    next();
-});
