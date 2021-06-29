@@ -35,7 +35,7 @@ console.log(direcccionAPi);
 
 //realiza un fetch a la api cada 15 minutos. Cambiando por 30, seria cada 30 minutos.
 //quitando el primer */, se activara en el minuto N de cada hora. Documentacion schedule-node
-const getNewsJob = schedule.scheduleJob('*/1 * * * *', function () {
+const getNewsJob = schedule.scheduleJob('*/15 * * * *', function () {
     console.log('getNewsJob activado, trayendo nuevas noticias')
     axios.get(direcccionAPi)
       .then((response) => newsData=response.data)
