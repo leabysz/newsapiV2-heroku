@@ -16,7 +16,9 @@ app.all('*', function(req, res, next) {
 //documentacion https://newsapi.org/docs/endpoints/everything
 const newsApiRoute = 'https://newsapi.org/v2/everything?';
 //para agregar poner OR y usar + en lugar de espacios
-const newsApiKeywords = 'crypto+OR+bitcoin+OR+cryptocurrency';
+const newsApiKeywords = 'HEGIC+OR+SIREN+OR+Oiler+Network+OR+AntiMatter+OR+Hedget+ORFinNexus+OR+Premia+OR+Auctus+OR+Ribbon+Finance+OR+MirrorProtocol+OR+Perpetual+Protocol+OR+Futureswap+OR+LedgerX';
+//Lenguaje
+const newsApiKeyLenguaje = 'en';
 //opciones: relevancy, popularity, publishedAt
 const newsApiSortBy = 'publishedAt';
 //cantidad de articulos, maximo 100
@@ -39,7 +41,7 @@ app.get("/newsapi", (req, res) => {
 
 //console.log de la direccion api, en caso de cambios siempre verificar 
 //entrando al link de la console log que funcione correctamente
-const direcccionAPi = `${newsApiRoute}q=${newsApiKeywords}&sortBy=${newsApiSortBy}&pageSize=${newsApiSize}&apiKey=${newsApiKey}`;
+const direcccionAPi = `${newsApiRoute}q=${newsApiKeywords}&language=${newsApiKeyLenguaje}&sortBy=${newsApiSortBy}&pageSize=${newsApiSize}&apiKey=${newsApiKey}`;
 console.log(direcccionAPi);
 
 //realiza un fetch a la api cada 15 minutos. Cambiando por 30, seria cada 30 minutos.
