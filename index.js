@@ -17,7 +17,7 @@ app.all('*', function(req, res, next) {
 const newsApiRoute = 'https://newsapi.org/v2/everything?';
 //para agregar poner OR y usar + en lugar de espacios
 const newsApiKeywords = 'HEGIC+OR+SIREN+OR+Oiler+Network+OR+AntiMatter+OR+Hedget+ORFinNexus+OR+Premia+OR+Auctus+OR+Ribbon+Finance+OR+MirrorProtocol+OR+Perpetual+Protocol+OR+Futureswap+OR+LedgerX';
-//Lenguaje
+//Lenguaje word
 const newsApiKeyLenguaje = 'en';
 //opciones: relevancy, popularity, publishedAt
 const newsApiSortBy = 'publishedAt';
