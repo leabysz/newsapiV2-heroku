@@ -26,7 +26,7 @@ const newsApiSize = '10';
 const newsApiKey = '6633de5b30b74366b611995131df0058';
 
 //Array que guarda el resultado de la apicall
-let newsData = [{
+let newsData = {
     "status": "ok",
     "totalResults": 4651,
     "articles": [
@@ -161,7 +161,7 @@ let newsData = [{
             "content": "Twitter CEO Jack Dorsey has revealed what he plans to do with his mysterious bitcoin startup TBD.\r\nThe venture, which is a unit of Mr Dorseys payments firm Square, will develop a decentralised exchan… [+1969 chars]"
         }
     ]
-}];
+};
 let port = process.env.PORT || 3000;
 
 
