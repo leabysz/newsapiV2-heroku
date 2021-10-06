@@ -22,7 +22,7 @@ const newsApiKeyLenguaje = 'en';
 //opciones: relevancy, popularity, publishedAt
 const newsApiSortBy = 'publishedAt';
 //cantidad de articulos, maximo 100
-const newsApiSize = '10';
+const newsApiSize = '100';
 const newsApiKey = '6633de5b30b74366b611995131df0058';
 
 //Array que guarda el resultado de la apicall
